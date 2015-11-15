@@ -47,7 +47,10 @@ if ((playerMove === "rock" && comptuerMove === "scissors") || (playerMove === "s
 } else if ((computerMove === "rock" && playerMove === "scissors") || (computerMove === "scissors" && playerMove === "paper") ||
 (computerMove === "paper" && playerMove === "rock")) {
 	winner = "computer wins!";
-} else {
+} else if (( computerMove === "rock && playerMove === "rock") || (computerMove === "scissors" && playerMove === "scissors") || 
+( computerMove === "paper" && playerMove === "paper")) {
+	winner = "tie!";
+}	else {
     return winner;
 }
 
