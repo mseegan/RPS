@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -25,14 +25,14 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return playerMove = move || getInput();
+    return move (playerMove || getInput());
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return computerMove = move || randomPlay();
+    return move (computerMove || randomPlay());
 }
 
 function getWinner(playerMove,computerMove) {
@@ -47,9 +47,9 @@ if ((playerMove === "rock" && comptuerMove === "scissors") || (playerMove === "s
 } else if ((computerMove === "rock" && playerMove === "scissors") || (computerMove === "scissors" && playerMove === "paper") ||
 (computerMove === "paper" && playerMove === "rock")) {
 	winner = "computer wins";
-} else if (( computerMove === "rock && playerMove === "rock") || (computerMove === "scissors" && playerMove === "scissors") || 
-( computerMove === "paper" && playerMove === "paper")) {
-	winner = "tie!";
+} else if (( computerMove === 'rock' && playerMove === 'rock') || (computerMove === 'scissors' && playerMove === 'scissors') || 
+( computerMove === 'paper' && playerMove === 'paper')) {
+	winner = 'tie!';
 }	else {
     return winner;
 }
@@ -63,15 +63,18 @@ function playToFive() {
 while (playerWins < 5 && computerWins < 5) {
 	var playerMove = getPlayerMove();
 	var computerMove = getComputerMove();
-	if (winner === 'player wins') {
+	} if (winner === 'player wins') {
 	playerWins +=1;
 } else if (winner === 'computer wins') {
 	computerWins +=1;
 }
-	console.log("player chose "+ playerMove + "while the computer chose " + computerMove + ".");
-	console.log("round won by " + winner + ".");
-	console.log("player won " playerWins + " " + "and the computer won " + computerWins + ".");
 }
+	
+
+    console.log('player chose '+ playerMove + "while the computer chose " + computerMove + ".");
+	console.log('round won by ' + winner + '.');
+	console.log('the score is currently ; + playerWins + " to " + computerWins + "/n");
+
     return [playerWins, computerWins];
 }
 
